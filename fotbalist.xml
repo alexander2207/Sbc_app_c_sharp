@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <fotbalisti>
+    <fotbalist>
+      <nume>Ronaldo</nume>
+      <prenume>Cristiano</prenume>
+      <age>30</age>
+      <team>Real Madrid</team>
+      <games>30</games>
+      <goals>45</goals>
+    </fotbalist>
+    <fotbalist>
+      <nume>Mutu</nume>
+      <prenume>Adrian</prenume>
+      <age>38</age>
+      <team>Fiorentina</team>
+      <games>200</games>
+      <goals>120</goals>
+    </fotbalist>
+    <fotbalist id="fotbalist3">
+      <nume>Chivu</nume>
+      <prenume>Cristian</prenume>
+      <age>36</age>
+      <team>AS Roma</team>
+      <games>120</games>
+      <goals>20</goals>
+    </fotbalist>
+    <fotbalist id="fotbalist5">
+      <nume>Higuain</nume>
+      <prenume>Gonzalo</prenume>
+      <age>31</age>
+      <team>Juventus</team>
+      <games>100</games>
+      <goals>120</goals>
+    </fotbalist>
+    <fotbalist id="fotbalist6">
+      <nume>Bale</nume>
+      <prenume>Gareth</prenume>
+      <age>25</age>
+      <team>Real Madrid</team>
+      <games>90</games>
+      <goals>100</goals>
+    </fotbalist>
+    <fotbalist id="fotbalist7">
+      <nume>Benzema</nume>
+      <prenume>Karim</prenume>
+      <age>29</age>
+      <team>Real Madrid</team>
+      <games>120</games>
+      <goals>95</goals>
+    </fotbalist>
+  </fotbalisti>
+  <reguli>
+    <!--Regula 1-->
+    <regula>
+      <tip>Cauta fotbalist A.</tip>
+      <if>
+        <rel>exista</rel>
+        <ce>fotbalist</ce>
+        <expresie>A</expresie>
+      </if>
+      <then>Exista fotbalistul %1</then>
+      <else>Nu exista niciun fotbalist cautat!</else>
+    </regula>
+    <!--Regula 2-->
+    <regula>
+      <tip>Fotbalisti cu cel putin A meciuri.</tip>
+      <if>
+        <!--if Fotbalisti au mai mult de A meciuri jucate-->
+        <expr>SIMPLE</expr>
+        <ce>fotbalist</ce>
+        <expresie>mare</expresie>
+        <a>
+        </a>
+      </if>
+      <then>Fotbalistii sunt:%1.</then>
+      <else>Nu exista fotbalist cu (&gt;%1 nrMeciuri)!</else>
+    </regula>
+    <!--Regula 3-->
+    <regula>
+      <tip>Cauta fotbalist A si fotbalist B.</tip>
+      <if>
+        <rel>exista</rel>
+        <ce>fotbalist</ce>
+        <expresie>AND</expresie>
+        <a>
+        </a>
+        <b>
+        </b>
+      </if>
+      <then>Fotbalistul %1 se afla la echipa %2 si fotbalistul %3 se afla la echipa %4</then>
+      <else>Nu exista fotbalisti cautati!</else>
+    </regula>
+    <!--Regula 4-->
+    <regula>
+      <tip>Cauta fotbalisti care au intre A si B goluri.</tip>
+      <if>
+        <rel>exista</rel>
+        <ce>fotbalist</ce>
+        <!--if Fotbalisti au intre A si B goluri-->
+        <expresie>AND</expresie>
+        <a>
+        </a>
+        <b>
+        </b>
+      </if>
+      <then>%1</then>
+      <else>Nu exista fotbalisti cu atatea goluri!</else>
+    </regula>
+  </reguli>
+</root>
